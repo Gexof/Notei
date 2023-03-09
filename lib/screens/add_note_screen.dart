@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 import 'package:gex_note/constants/colors.dart';
@@ -15,7 +13,7 @@ class AddNoteScreen extends StatelessWidget {
   final TextEditingController _contentController = TextEditingController();
   Cache sharedPref = Cache();
 
-  AddNoteScreen({super.key});
+  AddNoteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

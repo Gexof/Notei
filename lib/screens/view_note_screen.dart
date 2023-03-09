@@ -6,7 +6,7 @@ import '../constants/colors.dart';
 import '../widgets/custom_app_bar.dart';
 
 class ViewNoteScreen extends StatelessWidget {
-  const ViewNoteScreen({super.key});
+  const ViewNoteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

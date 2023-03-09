@@ -10,12 +10,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
 
   const CustomAppBar({
-    super.key,
+    Key? key,
     required this.title,
     required this.actions,
     required this.centered,
     this.leading,
-  });
+  }) : super(key: key);
 
   @override
   Size get preferredSize => Size.fromHeight(60);
