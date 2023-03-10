@@ -4,14 +4,12 @@ import 'package:gex_note/constants/colors.dart';
 import 'package:gex_note/widgets/custom_app_bar.dart';
 import 'package:provider/provider.dart';
 
-import '../helpers/cache.dart';
 import '../providers/note_provider.dart';
 
 class AddNoteScreen extends StatelessWidget {
   // contollers
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _contentController = TextEditingController();
-  Cache sharedPref = Cache();
 
   AddNoteScreen({Key? key}) : super(key: key);
 

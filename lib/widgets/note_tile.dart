@@ -7,9 +7,10 @@ import 'package:gex_note/models/note_model.dart';
 
 class NoteTile extends StatelessWidget {
   final Note noteModel;
-  void Function(BuildContext)? onPressed;
+  final void Function(BuildContext)? onPressed;
 
-  NoteTile({
+  const NoteTile({
+    super.key,
     required this.noteModel,
     required this.onPressed,
   });
@@ -37,7 +38,7 @@ class NoteTile extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ViewNoteScreen(),
+                      builder: (context) => const ViewNoteScreen(),
                     ));
               },
               child: Container(

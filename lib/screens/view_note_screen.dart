@@ -10,12 +10,12 @@ class ViewNoteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    NoteProvider note = Provider.of<NoteProvider>(context);
+    NoteProvider notesProvider = Provider.of<NoteProvider>(context);
 
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: CustomAppBar(
-        title: Text('Add Note'),
+        title: const Text('Add Note'),
 
         // Save note
         actions: IconButton(
@@ -36,7 +36,7 @@ class ViewNoteScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text(note.getNote[0] as String),
+          Text(notesProvider.notes[0] as String),
           const Expanded(
             child: SizedBox(
               height: double.infinity,

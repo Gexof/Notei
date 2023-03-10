@@ -1,54 +1,49 @@
 import 'dart:developer';
 
-import 'package:gex_note/helpers/cache.dart';
-
 import 'package:flutter/material.dart';
+import 'package:gex_note/services/note_cache_service.dart';
 
 import '../models/note_model.dart';
 
+// Note(
+//   id: 0,
+//   title: 'gex',
+//   content: 'Hello bitch',
+//   date: DateTime.now().toString(),
+// ),
+// Note(
+//   id: 1,
+//   title: 'gex',
+//   content: 'Hello bitch',
+//   date: DateTime.now().toString(),
+// ),
+
 class NoteProvider extends ChangeNotifier {
-  final List<Note> _notes = [
-    Note(
-      id: 0,
-      title: 'gex',
-      content: 'Hello bitch',
-      date: DateTime.now().toString(),
-    ),
-    Note(
-      id: 1,
-      title: 'gex',
-      content: 'Hello bitch',
-      date: DateTime.now().toString(),
-    ),
-  ];
+  List<Note> notes = [];
 
-  Cache sharedPref = Cache();
-
-  // Get notes
-  List<Note> get getNote {
-    return _notes;
-  }
-
-  // Add new note
   void creatNote(String title, String content) {
     try {
       Note note = Note(
-        id: _notes.length,
+        id: notes.length,
         title: title,
         content: content,
         date: DateTime.now().toString(),
       );
-      log(note.id.toString());
-      _notes.add(note);
+      notes.add(note);
+      NoteCacheService.instance.createNotes(notes: notes);
       notifyListeners();
     } catch (e) {
       log(e.toString());
     }
   }
 
-  // Delete note
+  void getNotes() {
+    notes = NoteCacheService.instance.getNotes();
+    notifyListeners();
+  }
+
   void deleteNote(int i) {
-    _notes.removeAt(i);
+    notes.removeAt(i);
     notifyListeners();
   }
 }

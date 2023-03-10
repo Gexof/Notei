@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -18,7 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   @override
-  Size get preferredSize => Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(60);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: leading,
       actions: [
         Padding(
-          padding: EdgeInsets.only(right: 16),
+          padding: const EdgeInsets.only(right: 16),
           child: actions,
         ),
       ],
