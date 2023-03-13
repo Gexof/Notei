@@ -8,6 +8,8 @@ import 'package:gex_note/screens/home/widgets/home_floating_action_button.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
