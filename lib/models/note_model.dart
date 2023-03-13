@@ -24,13 +24,4 @@ class Note {
     data['date'] = date;
     return data;
   }
-
-  // static String encode(List<Note> note) => json.encode(
-  //       note.map<Map<String, dynamic>>((note) => note.toJson()).toList(),
-  //     );
-
-  // static List<Note> decode(String notes) =>
-  //     (json.decode(notes) as List<dynamic>)
-  //         .map<Note>((item) => Note.fromJson(item))
-  //         .toList();
 }

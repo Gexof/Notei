@@ -44,6 +44,8 @@ class NoteProvider extends ChangeNotifier {
 
   void deleteNote(int i) {
     notes.removeAt(i);
+    NoteCacheService.instance.createNotes(notes: notes);
+    log('Note Deleted');
     notifyListeners();
   }
 }
