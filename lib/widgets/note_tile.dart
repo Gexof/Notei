@@ -10,7 +10,6 @@ class NoteTile extends StatelessWidget {
   final void Function(BuildContext)? onPressed;
 
   const NoteTile({
-    super.key,
     required this.noteModel,
     required this.onPressed,
   });
