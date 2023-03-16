@@ -52,10 +52,10 @@ import 'package:gex_note/providers/note_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../constants/colors.dart';
-import '../models/note_model.dart';
 
 class ViewNoteScreen extends StatelessWidget {
-  const ViewNoteScreen({Key? key}) : super(key: key);
+  int index;
+  ViewNoteScreen({required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -70,19 +70,19 @@ class ViewNoteScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${notesProvider.notes[1].title}',
+                '${notesProvider.notes[index].title}',
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const Divider(color: Colors.black38),
-              const Expanded(
+              Expanded(
                 child: SizedBox(
                   height: double.infinity,
                   child: Text(
-                    'Gex first note you can ever fucking see it m hahahahhahahahahahhahaha hhahahahhahahah hahahahhahahahah ahhahahahaha you ou ouou ',
-                    style: TextStyle(
+                    '${notesProvider.notes[index].content}',
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),

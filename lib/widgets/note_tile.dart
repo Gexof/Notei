@@ -33,77 +33,67 @@ class NoteTile extends StatelessWidget {
                 ),
               ],
             ),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ViewNoteScreen(),
-                  ),
-                );
-              },
-              child: Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Color(0xfff0f6fd),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
+            child: Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Color(0xfff0f6fd),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(16),
                 ),
-                child: Row(
-                  children: [
-                    // Marker on the left
-                    Container(
-                      width: 15,
-                      height: 120,
-                      decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(16),
-                          bottomLeft: Radius.circular(16),
-                        ),
+              ),
+              child: Row(
+                children: [
+                  // Marker on the left
+                  Container(
+                    width: 15,
+                    height: 120,
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        bottomLeft: Radius.circular(16),
                       ),
                     ),
+                  ),
 
-                    //  body of note
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // (Note Title)
-                            Text(
-                              noteModel.title!,
-                              style: const TextStyle(
-                                fontSize: 18,
-                              ),
-                              overflow: TextOverflow.ellipsis,
+                  //  body of note
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // (Note Title)
+                          Text(
+                            noteModel.title!,
+                            style: const TextStyle(
+                              fontSize: 18,
                             ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
 
-                            const SizedBox(height: 10),
+                          const SizedBox(height: 10),
 
-                            // (Note Content)
-                            Text(
-                              noteModel.content!,
-                              style: const TextStyle(
-                                color: Colors.grey,
-                                fontSize: 12,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
+                          // (Note Content)
+                          Text(
+                            noteModel.content!,
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12,
                             ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
 
-                            const SizedBox(height: 10),
+                          const SizedBox(height: 10),
 
-                            // Note Date
-                            Text(noteModel.date.toString()),
-                          ],
-                        ),
+                          // Note Date
+                          Text(noteModel.date.toString()),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
