@@ -36,10 +36,11 @@ class NoteTile extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ViewNoteScreen(),
-                    ));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ViewNoteScreen(),
+                  ),
+                );
               },
               child: Container(
                 width: double.infinity,
