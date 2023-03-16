@@ -10,9 +10,10 @@ class NoteTile extends StatelessWidget {
   final void Function(BuildContext)? onPressed;
 
   const NoteTile({
+    Key? key,
     required this.noteModel,
     required this.onPressed,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
